@@ -6,6 +6,11 @@ FOR /F %%i IN (options/admin.txt) DO set admin=%%i
 if 'z!admin!'=='ztrue' (
     goto getAdmin
     exit
+) else if 'z!admin!'=='zfalse' (
+    goto continue
+    exit
+) else (
+    msg "%username%" "Unknown /options/admin.txt ""!admin!"" #00002"
 )
 
 :continue
@@ -39,7 +44,7 @@ if 'z!window!'=='znormal' (
 ) else if 'z!window!'=='zhidden' (
     start /b cmd /c custom.bat
 ) else (
-    msg "%username%" "Unknown /options/window.txt ""!window!"""
+    msg "%username%" "Unknown /options/window.txt ""!window!"" #00001"
 )
 
 exit
