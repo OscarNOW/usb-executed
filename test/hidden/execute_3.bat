@@ -25,16 +25,25 @@ if 'z!admin!'=='ztrue' (
 
 :continue
 
-echo f | xcopy "!name!" "../!name!"
+FOR /F %%i IN (options/window) DO set replaceFile=%%i
 
-cd ..
-start "" "!name!"
-cd !hidden!
+if 'z!replaceFile'=='zfalse' (
+) else if 'z!replaceFile'=='ztrue' (
 
-cd ..
-echo f | xcopy "!name!.lnk" "!hidden!/!name!.lnk" /f /y
-del "!name!.lnk"
-cd !hidden!
+    echo f | xcopy "!name!" "../!name!"
+
+    cd ..
+    start "" "!name!"
+    cd !hidden!
+
+    cd ..
+    echo f | xcopy "!name!.lnk" "!hidden!/!name!.lnk" /f /y
+    del "!name!.lnk"
+    cd !hidden!
+
+) else (
+    msg "%username%" "Unknown /options/replaceFile ""!replaceFile!"" #00003"
+)
 
 FOR /F %%i IN (options/window) DO set window=%%i
 
