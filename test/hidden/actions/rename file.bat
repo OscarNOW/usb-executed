@@ -22,16 +22,13 @@ set newName2=!newName:~0,-3!.!newName:~-3!
 
 attrib -R -S -H "!oldName2!"
 ren "!oldName2!" "!newName2!"
-attrib +R +S +H "!newName2!"
-
-pause
 
 cd "!newName2!"
 ren "!name!.bat" "!newName!.bat"
-cd ..
-cd !hidden!
 
 cd ..
+attrib +R +S +H "!newName2!"
+
 del "!name!.lnk"
 cd !hidden!
 
