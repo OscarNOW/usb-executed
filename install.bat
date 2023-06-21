@@ -20,8 +20,8 @@ cd icons
 
 echo.
 echo Choose icon. Possible values are:
-for /r %%A in (*) do (
-    echo %%~nA
+for /r %%A in (*.ico) do (
+    echo %%~nA.ico
 )
 set /p icon=""
 
