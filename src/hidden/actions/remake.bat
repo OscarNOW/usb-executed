@@ -18,6 +18,7 @@ echo Set oLink = oWS.CreateShortcut(sLinkFile) >> temp.vbs
 echo oLink.TargetPath = "%cd%\!hidden!\execute_1.bat" >> temp.vbs
 echo oLink.WorkingDirectory = "%cd%\!hidden!\" >> temp.vbs
 echo oLink.IconLocation = "%cd%\!hidden!\icon.ico" >> temp.vbs
+echo oLink.WindowStyle = "7" >> temp.vbs
 echo oLink.Save >> temp.vbs
 cscript temp.vbs
 del temp.vbs
