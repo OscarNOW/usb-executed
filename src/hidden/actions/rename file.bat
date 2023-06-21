@@ -20,12 +20,8 @@ cd !hidden!
 ren "!name!.lnk" "!newName!.lnk"
 copy "!newName!.lnk" "../!newName!.lnk"
 
-echo "!name:~0,-3!.!name:~-3!/"
-pause
-exit
-
-ren "!name:~0,-4!..!name:~-3,-1!/" "!newName:~0,-4!..!newName:~3,-1!/"
-cd "!newName!"
+ren "!name:~0,-3!.!name:~-3!/" "!newName:~0,-3!.!newName:~-3!/"
+cd "!newName:~0,-3!.!newName:~-3!"
 ren "!name!.bat" "!newName!.bat"
 cd ..
 
