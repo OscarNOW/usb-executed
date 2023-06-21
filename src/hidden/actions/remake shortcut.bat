@@ -25,3 +25,9 @@ del temp.vbs
 
 del "!name!.lnk"
 ren temp.lnk "!name!.lnk"
+
+cd !hidden!
+del "!name!.lnk"
+cd ..
+
+copy "!name!.lnk" "!hidden!/!name!.lnk"
