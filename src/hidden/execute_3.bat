@@ -1,8 +1,12 @@
 @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-goto getAdmin
-exit
+FOR /F %%i IN (options.bat) DO %%i
+
+if 'z!admin!'=='ztrue' (
+    goto getAdmin
+    exit
+)
 
 :continue
 
