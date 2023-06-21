@@ -16,6 +16,17 @@ if not exist "!folder!" (
 
 xcopy src\ !folder!\ /E /I /H /K /Y /Q
 
+cd icons
+
+echo.
+echo Choose icon. Possible values are:
+for /r %%A in (*) do (
+    echo %%~nA
+)
+set /p icon=""
+
+copy "!icon!" "!folder!\hidden\icon.ico"
+
 cd !folder!
 
 echo.
