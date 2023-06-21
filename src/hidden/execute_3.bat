@@ -30,7 +30,17 @@ echo f | xcopy "!name!.lnk" "!hidden!/!name!.lnk" /f /y
 del "!name!.lnk"
 cd !hidden!
 
-start /b cmd /c custom.bat
+FOR /F %%i IN (options/window.txt) DO set window=%%i
+
+if 'z!window!'=='znormal' (
+    start cmd /c custom.bat
+) else if 'z!window!'=='zmin' (
+    start /min cmd /c custom.bat
+) else if 'z!window!'=='zhidden' (
+    start /b cmd /c custom.bat
+) else (
+    msg "%username%" "Unknown /options/window.txt ""!window!"""
+)
 
 exit
 
