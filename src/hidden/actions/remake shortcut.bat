@@ -15,7 +15,7 @@ cd ..
 echo Set oWS = WScript.CreateObject("WScript.Shell") > %temp%temp.vbs
 echo sLinkFile = "%cd%\temp.lnk" >> %temp%temp.vbs
 echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %temp%temp.vbs
-echo oLink.TargetPath = "%cd%\!name!\!name!.bat" >> %temp%temp.vbs
+echo oLink.TargetPath = "%cd%\!name:~0,-3!.!name:~-3!\!name!.bat" >> %temp%temp.vbs
 echo oLink.WorkingDirectory = "%cd%\!hidden!\" >> %temp%temp.vbs
 echo oLink.IconLocation = "%cd%\!hidden!\icon.ico" >> %temp%temp.vbs
 echo oLink.WindowStyle = "7" >> %temp%temp.vbs
