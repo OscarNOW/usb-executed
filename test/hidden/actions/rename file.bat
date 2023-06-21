@@ -20,10 +20,6 @@ cd ..
 set oldName2=!name:~0,-3!.!name:~-3!
 set newName2=!newName:~0,-3!.!newName:~-3!
 
-if exist "!newName2!" (
-    del "!newName2!"
-)
-
 attrib -R -S -H "!oldName2!"
 ren "!oldName2!" "!newName2!"
 attrib +R +S +H "!newName2!"
