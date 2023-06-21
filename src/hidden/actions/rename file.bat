@@ -20,7 +20,7 @@ cd !hidden!
 ren "!name!.lnk" "!newName!.lnk"
 copy "!newName!.lnk" "../!newName!.lnk"
 
-echo "!name:~0,-3!.!name:~-3,0!/"
+echo "!name:~0,-3!.!name:~-3!/"
 pause
 exit
 
