@@ -41,7 +41,6 @@ if %errorLevel% == 0 (
 :UACPrompt
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%temp2.vbs"
     echo UAC.ShellExecute "cmd.exe", "/c ""%cd%\execute_1.bat"" %cd%", "", "runas", 1 >> "%temp%temp2.vbs"
-    @REM echo UAC.ShellExecute "cmd.exe", "/c ""%~s0""", "", "runas", 1 >> "%temp%temp2.vbs"
 
     "%temp%temp2.vbs"
     del "%temp%temp2.vbs"
