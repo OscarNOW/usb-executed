@@ -5,8 +5,6 @@ goto getAdmin
 exit
 
 :continue
-msg "%username%" Hello
-exit
 
 for %%I in (.) do set hidden=%%~nxI
 
