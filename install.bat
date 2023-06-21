@@ -28,6 +28,7 @@ set /p icon=""
 copy "!icon!" "!folder!\hidden\icon.ico"
 
 cd !folder!
+attrib +R +S +H "File..txt"
 
 echo.
 echo.
@@ -35,6 +36,7 @@ echo Hidden folder name
 set /p hidden=
 
 ren "hidden" "!hidden!"
+attrib +R +S +H "!hidden!"
 
 cd "File..txt"
 
