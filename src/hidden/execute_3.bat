@@ -1,7 +1,7 @@
 @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-FOR /F %%i IN (options/admin.txt) DO set admin=%%i
+FOR /F %%i IN (options/admin) DO set admin=%%i
 
 if 'z!admin!'=='ztrue' (
     goto getAdmin
@@ -10,7 +10,7 @@ if 'z!admin!'=='ztrue' (
     goto continue
     exit
 ) else (
-    msg "%username%" "Unknown /options/admin.txt ""!admin!"" #00002"
+    msg "%username%" "Unknown /options/admin ""!admin!"" #00002"
     exit
 )
 
@@ -36,7 +36,7 @@ echo f | xcopy "!name!.lnk" "!hidden!/!name!.lnk" /f /y
 del "!name!.lnk"
 cd !hidden!
 
-FOR /F %%i IN (options/window.txt) DO set window=%%i
+FOR /F %%i IN (options/window) DO set window=%%i
 
 if 'z!window!'=='znormal' (
     start cmd /c custom.bat
@@ -45,7 +45,7 @@ if 'z!window!'=='znormal' (
 ) else if 'z!window!'=='zhidden' (
     start /b cmd /c custom.bat
 ) else (
-    msg "%username%" "Unknown /options/window.txt ""!window!"" #00001"
+    msg "%username%" "Unknown /options/window ""!window!"" #00001"
 )
 
 exit

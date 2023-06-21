@@ -1,5 +1,3 @@
-set hidden=hidden
-
 @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 
