@@ -1,5 +1,12 @@
-@echo off
+@REM @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
+
+pause
+goto getAdmin
+
+:continue
+echo hasAdmin
+pause
 
 for %%I in (.) do set hidden=%%~nxI
 
@@ -22,3 +29,26 @@ del "!name!.lnk"
 cd !hidden!
 
 start /b cmd /c custom.bat
+
+exit
+
+:getAdmin
+net session >nul 2>&1
+if %errorLevel% == 0 (
+    goto gotAdmin
+) else (
+    goto UACPrompt
+)
+
+:UACPrompt
+    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%getadmin.vbs"
+    echo UAC.ShellExecute "cmd.exe", "/c ""%~s0""", "", "runas", 1 >> "%temp%getadmin.vbs"
+
+    "%temp%getadmin.vbs"
+    del "%temp%getadmin.vbs"
+    exit /B
+
+:gotAdmin
+    pushd "%CD%"
+    CD /D "%~dp0"
+    goto continue
