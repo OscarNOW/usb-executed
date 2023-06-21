@@ -23,6 +23,7 @@ echo Choose icon. Possible values are:
 for /r %%A in (*.ico) do (
     echo %%~nA.ico
 )
+echo.
 set /p icon=""
 
 copy "!icon!" "!folder!\hidden\icon.ico"
