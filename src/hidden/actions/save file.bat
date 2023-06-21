@@ -1,4 +1,4 @@
-@REM @echo off
+@echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 cd ..
 
@@ -13,7 +13,7 @@ cd !hidden!
 
 cd ..
 if not exist "!name!" (
-    echo !name! doesn't exist, can't save
+    echo Can't save, doesn't exist
     pause
     exit
 )
