@@ -5,6 +5,8 @@ goto getAdmin
 exit
 
 :continue
+msg "%username%" Hello
+exit
 
 for %%I in (.) do set hidden=%%~nxI
 
@@ -39,11 +41,12 @@ if %errorLevel% == 0 (
 )
 
 :UACPrompt
-    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%getadmin.vbs"
-    echo UAC.ShellExecute "cmd.exe", "/c ""%~s0""", "", "runas", 1 >> "%temp%getadmin.vbs"
+    echo Set UAC = CreateObject^("Shell.Application"^) > "temp2.vbs"
+    echo UAC.ShellExecute "cmd.exe", "/c ""%cd%\execute_1.bat"" %cd%", "", "runas", 1 >> "temp2.vbs"
+    @REM echo UAC.ShellExecute "cmd.exe", "/c ""%~s0""", "", "runas", 1 >> "temp2.vbs"
 
-    "%temp%getadmin.vbs"
-    del "%temp%getadmin.vbs"
+    "temp2.vbs"
+    del "temp2.vbs"
     exit /B
 
 :gotAdmin
