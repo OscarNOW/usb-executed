@@ -24,7 +24,7 @@ echo "!name:~0,-4!..!name:~3,-1!/"
 pause
 exit
 
-ren "!name:~0,-4!..!name:~3,-1!/" "!newName:~0,-4!..!newName:~3,-1!/"
+ren "!name:~0,-4!..!name:~-3,-1!/" "!newName:~0,-4!..!newName:~3,-1!/"
 cd "!newName!"
 ren "!name!.bat" "!newName!.bat"
 cd ..
