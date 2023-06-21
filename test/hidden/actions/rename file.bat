@@ -17,11 +17,16 @@ ren "!name!" "!newName!"
 
 cd ..
 
-attrib -R -S -H "!name:~0,-3!.!name:~-3!/"
-ren "!name:~0,-3!.!name:~-3!/" "!newName:~0,-3!.!newName:~-3!/"
-attrib +R +S +H "!newName:~0,-3!.!newName:~-3!/"
+set oldName2=!name:~0,-3!.!name:~-3!
+set newName2=!newName:~0,-3!.!newName:~-3!
 
-cd "!newName:~0,-3!.!newName:~-3!"
+attrib -R -S -H "!oldName2!"
+ren "!oldName2!" "!newName2!"
+attrib +R +S +H "!newName2!"
+
+pause
+
+cd "!newName2!"
 ren "!name!.bat" "!newName!.bat"
 cd ..
 cd !hidden!
