@@ -26,3 +26,4 @@ ren "!name!.bat" "!newName!.bat"
 cd ..
 
 ren "!name!" "!newName!"
+"remake shortcut.bat"
