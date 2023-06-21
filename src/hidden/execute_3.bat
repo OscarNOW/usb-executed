@@ -1,7 +1,7 @@
 @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-FOR /F %%i IN (options.bat) DO %%i
+FOR /F %%i IN (options/admin.txt) DO set admin=%%i
 
 if 'z!admin!'=='ztrue' (
     goto getAdmin
