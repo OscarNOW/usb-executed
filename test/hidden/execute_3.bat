@@ -27,9 +27,9 @@ if 'z!admin!'=='ztrue' (
 
 FOR /F %%i IN (options/replaceFile) DO set replaceFile=%%i
 
-if 'z!replaceFile'=='zfalse' (
+if 'z!replaceFile!'=='zfalse' (
     echo.
-) else if 'z!replaceFile'=='ztrue' (
+) else if 'z!replaceFile!'=='ztrue' (
 
     echo f | xcopy "!name!" "../!name!"
 
