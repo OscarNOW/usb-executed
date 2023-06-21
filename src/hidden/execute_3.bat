@@ -11,6 +11,7 @@ if 'z!admin!'=='ztrue' (
     exit
 ) else (
     msg "%username%" "Unknown /options/admin.txt ""!admin!"" #00002"
+    exit
 )
 
 :continue
@@ -53,8 +54,10 @@ exit
 net session >nul 2>&1
 if %errorLevel% == 0 (
     goto gotAdmin
+    exit
 ) else (
     goto UACPrompt
+    exit
 )
 
 :UACPrompt

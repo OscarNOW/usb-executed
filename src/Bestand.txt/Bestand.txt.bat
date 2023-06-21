@@ -1,8 +1,13 @@
+set hidden=hidden
+
 @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 if 'z%1' NEQ 'z' (
     cd %1
+) else (
+    cd ..
+    cd !hidden!
 )
 
 cscript "execute_2.vbs"

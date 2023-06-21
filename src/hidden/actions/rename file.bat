@@ -20,4 +20,9 @@ cd !hidden!
 ren "!name!.lnk" "!newName!.lnk"
 copy "!newName!.lnk" "../!newName!.lnk"
 
+ren "!name!/" "!newName!/"
+cd "!newName!"
+ren "!name!.bat" "!newName!.bat"
+cd ..
+
 ren "!name!" "!newName!"
