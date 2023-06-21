@@ -1,4 +1,4 @@
-@echo off
+@REM @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 cd ..
 
@@ -12,10 +12,11 @@ for /R "%cd%" %%F in (*.lnk) do (
 cd !hidden!
 
 cd ..
-if not exist "!name!":
+if not exist "!name!" (
     echo !name! doesn't exist, can't save
     pause
     exit
+)
 cd !hidden!
 
 del "!name!"
