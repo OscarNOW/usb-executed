@@ -10,10 +10,11 @@ if "!folder:~-1!"=="/" set folder=!folder:~0,-1!
 if not exist "!folder!" (
     echo Path doesn't exist
     pause
+    goto :eof
     exit
 )
 
-@xcopy src\ !folder!\ /E /I /H /K /Y>nul
+xcopy src\ !folder!\ /E /I /H /K /Y /Q
 
 cd !folder!
 
@@ -37,8 +38,7 @@ cd !hidden!
 cd options
 for /r %%A in (*) do (
     echo.
-    echo.
-    echo Choose value for option %%A
+    echo Choose value for option '%%~nA'
     echo Possible options are:
 
     for /F "usebackq tokens=*" %%B in ("%%A") do (
@@ -52,7 +52,8 @@ for /r %%A in (*) do (
 )
 
 echo.
-echo.
-echo Installation done
-echo.
-pause
+
+cd ..
+cd actions
+
+"remake shortcut.bat"
