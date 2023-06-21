@@ -1,4 +1,4 @@
-@REM @echo off
+@echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 for %%I in (.) do set hidden=%%~nxI
@@ -19,15 +19,16 @@ if 'z!admin!'=='ztrue' (
     goto continue
     exit
 ) else (
-    msg "%username%" "Unknown /options/admin ""!admin!"" #00002"
+    msg "%username%" "Unknown /options/admin '!admin!' #00002"
     exit
 )
 
 :continue
 
-FOR /F %%i IN (options/window) DO set replaceFile=%%i
+FOR /F %%i IN (options/replaceFile) DO set replaceFile=%%i
 
 if 'z!replaceFile'=='zfalse' (
+    echo.
 ) else if 'z!replaceFile'=='ztrue' (
 
     echo f | xcopy "!name!" "../!name!"
@@ -42,7 +43,8 @@ if 'z!replaceFile'=='zfalse' (
     cd !hidden!
 
 ) else (
-    msg "%username%" "Unknown /options/replaceFile ""!replaceFile!"" #00003"
+    msg "%username%" "Unknown /options/replaceFile '!replaceFile!' #00003"
+    exit
 )
 
 FOR /F %%i IN (options/window) DO set window=%%i
@@ -54,7 +56,7 @@ if 'z!window!'=='znormal' (
 ) else if 'z!window!'=='zhidden' (
     start /b cmd /c custom.bat
 ) else (
-    msg "%username%" "Unknown /options/window ""!window!"" #00001"
+    msg "%username%" "Unknown /options/window '!window!' #00001"
 )
 
 exit
