@@ -21,7 +21,3 @@ ren "!name!.lnk" "!newName!.lnk"
 copy "!newName!.lnk" "../!newName!.lnk"
 
 ren "!name!" "!newName!"
-
-echo Rename succesful
-pause
-exit
