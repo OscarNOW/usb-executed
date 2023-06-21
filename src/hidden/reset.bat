@@ -6,4 +6,4 @@ cd ..
 del "%name%"
 
 cd %hidden%
-move "%name%.lnk" "../%name%.lnk"
+copy "%name%.lnk" "../%name%.lnk"
