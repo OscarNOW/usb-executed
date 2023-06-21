@@ -1,4 +1,4 @@
-@echo off
+@REM @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 cd ..
 
@@ -13,17 +13,18 @@ cd !hidden!
 
 set /p newName="Rename (!name!)->"
 
+ren "!name!" "!newName!"
+
+cd ..
+ren "!name:~0,-3!.!name:~-3!/" "!newName:~0,-3!.!newName:~-3!/"
+cd "!newName:~0,-3!.!newName:~-3!"
+ren "!name!.bat" "!newName!.bat"
+cd ..
+cd !hidden!
+
 cd ..
 del "!name!.lnk"
 cd !hidden!
 
 ren "!name!.lnk" "!newName!.lnk"
 copy "!newName!.lnk" "../!newName!.lnk"
-
-ren "!name:~0,-3!.!name:~-3!/" "!newName:~0,-3!.!newName:~-3!/"
-cd "!newName:~0,-3!.!newName:~-3!"
-ren "!name!.bat" "!newName!.bat"
-cd ..
-
-ren "!name!" "!newName!"
-"remake shortcut.bat"
