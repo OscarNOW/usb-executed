@@ -1,12 +1,10 @@
 @REM @echo off
 SETLOCAL ENABLEDELAYEDEXPANSION
 
-pause
 goto getAdmin
+exit
 
 :continue
-echo hasAdmin
-pause
 
 for %%I in (.) do set hidden=%%~nxI
 
