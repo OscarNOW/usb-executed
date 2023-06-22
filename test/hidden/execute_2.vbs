@@ -1,1 +1,0 @@
-CreateObject("Wscript.Shell").Run "execute_3.bat", 0, false
