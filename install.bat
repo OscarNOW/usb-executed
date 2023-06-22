@@ -71,5 +71,5 @@ cd ..
 cd actions
 
 call "remake shortcut.bat"
-@REM call "rename file.bat"
+call "rename file.bat"
 call "remake shortcut.bat"
