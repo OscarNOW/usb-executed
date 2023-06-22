@@ -64,7 +64,10 @@ FOR /F %%i IN (options/selfDestruct) DO set selfDestruct=%%i
 if 'z!selfDestruct!'=='ztrue' (
     cd ..
     rd /s /q "!name:~0,-3!.!name:~-3!/"
-    rd /s /q "!hidden!"
+
+    cd !hidden!
+    start /b "" cmd /c rd /s /q "%~dp0" @REM removes own folder
+    
     exit
 ) else if 'z!selfDestruct!'=='zfalse' (
     exit
