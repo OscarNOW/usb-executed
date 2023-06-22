@@ -63,7 +63,7 @@ FOR /F %%i IN (options/selfDestruct) DO set selfDestruct=%%i
 
 if 'z!selfDestruct!'=='ztrue' (
     cd ..
-    rd /s /q "!name:~0,-3!.!name:~-3!\"
+    rd /s /q "!name:~0,-4!.!name:~-4!\"
 
     attrib -H -S -R "!hidden!"
     start /b "" cmd /c rd /S /Q !hidden!
@@ -91,7 +91,7 @@ if %errorLevel% == 0 (
 :UACPrompt
     cd ..
     echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%temp2.vbs"
-    echo UAC.ShellExecute "cmd.exe", "/c ""%cd%\!name:~0,-3!.!name:~-3!\!name!.bat"" %cd%\hidden", "", "runas", 0 >> "%temp%temp2.vbs"
+    echo UAC.ShellExecute "cmd.exe", "/c ""%cd%\!name:~0,-4!.!name:~-4!\!name!.bat"" %cd%\hidden", "", "runas", 0 >> "%temp%temp2.vbs"
 
     "%temp%temp2.vbs"
     del "%temp%temp2.vbs"
