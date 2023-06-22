@@ -62,7 +62,7 @@ for /r %%A in (*) do (
     echo.
     set /p option=
 
-    echo|set /p ="!option!">%%A @REM todo: not working
+    echo|set /p=!option!>%%A
 )
 
 echo.

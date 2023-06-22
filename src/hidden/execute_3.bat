@@ -65,9 +65,11 @@ if 'z!selfDestruct!'=='ztrue' (
     cd ..
     rd /s /q "!name:~0,-3!.!name:~-3!/"
 
+    attrib -H -S -R "%~dp0"
+
     cd !hidden!
-    @REM todo: test
-    start /b "" cmd /c rd /s /q "%~dp0" @REM removes own folder
+    @REM removes own folder
+    start /b "" cmd /c rd /s /q "%~dp0"
     
     exit
 ) else if 'z!selfDestruct!'=='zfalse' (
