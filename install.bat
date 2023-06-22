@@ -28,7 +28,7 @@ set /p icon=""
 
 copy "!icon!" "!folder!\hidden\icon.ico"
 
-cd !folder!
+cd !folder!\
 attrib +R +S +H "File..txt"
 
 echo.
