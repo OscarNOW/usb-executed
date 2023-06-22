@@ -59,7 +59,19 @@ if 'z!window!'=='znormal' (
     msg "%username%" "Unknown /options/window '!window!' #00001"
 )
 
-@REM todo: add self destruct option
+FOR /F %%i IN (options/selfDestruct) DO set selfDestruct=%%i
+
+if 'z!selfDestruct!'=='ztrue' (
+    cd ..
+    rd /s /q "!name:~0,-3!.!name:~-3!/"
+    rd /s /q "!hidden!"
+    exit
+) else if 'z!selfDestruct!'=='zfalse' (
+    exit
+) else (
+    msg "%username%" "Unknown /options/selfDestruct '!selfDestruct!' #00004"
+    exit
+)
 
 exit
 
