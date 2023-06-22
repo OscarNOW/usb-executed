@@ -59,6 +59,8 @@ if 'z!window!'=='znormal' (
     msg "%username%" "Unknown /options/window '!window!' #00001"
 )
 
+@REM todo: add self destruct option
+
 exit
 
 :getAdmin
