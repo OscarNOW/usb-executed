@@ -2,7 +2,7 @@
 SETLOCAL ENABLEDELAYEDEXPANSION
 
 if 'z%1' NEQ 'z' (
-    cd %1
+    cd /d "%1"
 ) else (
     cd ..
     cd !hidden!

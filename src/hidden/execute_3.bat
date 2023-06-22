@@ -99,5 +99,5 @@ if %errorLevel% == 0 (
 
 :gotAdmin
     pushd "%CD%"
-    CD /D "%~dp0"
+    cd /d "%~dp0"
     goto continue
