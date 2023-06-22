@@ -15,4 +15,4 @@ cd ..
 del "!name!"
 
 cd !hidden!
-copy "!name!.lnk" "../!name!.lnk"
+copy "!name!.lnk" "..\!name!.lnk"

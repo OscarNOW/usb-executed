@@ -70,4 +70,6 @@ echo.
 cd ..
 cd actions
 
-"remake shortcut.bat"
+call "remake shortcut.bat"
+@REM call "rename file.bat"
+call "remake shortcut.bat"

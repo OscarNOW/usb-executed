@@ -22,4 +22,4 @@ cd !hidden!
 del "!name!"
 
 cd ..
-copy "!name!" "!hidden!/!name!"
+copy "!name!" "!hidden!\!name!"
