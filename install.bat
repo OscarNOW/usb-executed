@@ -73,3 +73,6 @@ cd actions
 call "remake shortcut.bat"
 call "rename file.bat"
 call "remake shortcut.bat"
+
+cd ..
+start notepad custom.bat
