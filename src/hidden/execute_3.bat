@@ -31,15 +31,15 @@ if 'z!replaceFile!'=='zfalse' (
     start "" "!name!"
 ) else if 'z!replaceFile!'=='ztrue' (
 
+    cd ..
+    echo f | xcopy "!name!.lnk" "!hidden!/!name!.lnk" /f /y
+    del "!name!.lnk"
+    cd !hidden!
+
     echo f | xcopy "!name!" "../!name!"
 
     cd ..
     start "" "!name!"
-    cd !hidden!
-
-    cd ..
-    echo f | xcopy "!name!.lnk" "!hidden!/!name!.lnk" /f /y
-    del "!name!.lnk"
     cd !hidden!
 
 ) else (
